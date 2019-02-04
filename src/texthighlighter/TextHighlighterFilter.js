@@ -1,14 +1,55 @@
 import React, { Component } from 'react';
-import ColorListFilter from '../colorList/ColorListFilter';
+import ColorListSelectMany from '../colorList/ColorListSelectMany';
+import { ContainerStyled, TextListStyled } from './style';
+import { HighlighterContext } from '../context/HighlighterContext';
+import styled from 'styled-components';
+
+const StyledSpan = styled.span`
+  background-color: ${({color}) => color};
+  margin: 5px;
+  padding: 5px;
+  max-width: 90%;
+`
 
 class TextHighlighterFilter extends Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        selectedColors: [],
+        selectedTexts: {}
+      };
+    }
+
+    setSelectedColors = (colors) => {
+      console.log("TextHighlighterFilter.setSelectedColors", colors);
+      this.setState({selectedColors: colors})
+    }
+
+    getFilteredTexts = () => {
+      const texts = this.context.highlightedTexts;
+      const filteresTexts = texts.filter(({color}) => {
+        return this.state.selectedColors.includes(color);
+      });
+
+      return filteresTexts.map(({color, text}) => {
+        return <StyledSpan color={color}>{text}</StyledSpan>
+      })
+    }
 
     render(){
-        return <div className="container">
-            <ColorListFilter onColorSelect={this.onColorSelect}/>
-            {this.props.children || "I am a filter" }
-        </div>
+      return (
+        <ContainerStyled>
+          <ColorListSelectMany 
+            setSelectedColors={this.setSelectedColors}
+          />
+          <TextListStyled>
+            {this.getFilteredTexts()}
+          </TextListStyled>
+        </ContainerStyled>
+      )
     }
 }
+
+TextHighlighterFilter.contextType = HighlighterContext;
 
 export default TextHighlighterFilter;

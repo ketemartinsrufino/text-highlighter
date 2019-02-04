@@ -1,22 +1,19 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
-import ColorList from '../colorList/ColorList';
-
-const TextHighlighterStyled = styled.div`
-    border: 1px red solid;
-`;
+import PropTypes from 'prop-types';
+import ColorListSelectOne from '../colorList/ColorListSelectOne';
+import { HighlighterContext } from '../context/HighlighterContext';
+import { ContainerStyled } from './style';
 
 class TextHighlighter extends Component {
     constructor(props) {
         super(props);
         this.state = {
             selectedColor: '',
-            selectedTexts: {}
         };
     }
     
     onColorSelect = (color) => {
-        this.setState({selectedColor: color})
+      this.setState({selectedColor: color})
     }
 
     onSelectText = () => {
@@ -28,24 +25,16 @@ class TextHighlighter extends Component {
         const highlightRange = (selection) => {
             const range = selection.getRangeAt(0);
             const text = selection.toString();
+            if(!text) {
+              return;
+            }
             var newNode = document.createElement("span");
             newNode.setAttribute(
                "style",
                `background-color: ${color}; display: inline;` 
             );
             range.surroundContents(newNode);
-            const selectedByColor = this.state.selectedTexts[color] || [];
-
-            selectedByColor.push(text);
-            this.setState((state) => {
-                return {
-                    ...state,
-                    selectedTexts: {
-                        ...state.selectedTexts, 
-                        [color]: selectedByColor
-                    }
-                }
-            });
+            this.context.updateHighlightedTexts(text, color);
         }
 
         const userSelection = window.getSelection();
@@ -53,13 +42,23 @@ class TextHighlighter extends Component {
     }
 
     render(){
-        return (
-            <TextHighlighterStyled>
-                <ColorList onColorSelect={this.onColorSelect}/>
-                <div onMouseUp={this.onSelectText}>{this.props.children}</div>
-            </TextHighlighterStyled>
-        )
+      return (
+        <ContainerStyled>
+          <ColorListSelectOne 
+            onColorSelect={this.onColorSelect}
+          />
+          <div onMouseUp={this.onSelectText}>
+            {this.props.children}
+          </div>
+        </ContainerStyled>
+      )
     }
 }
+
+TextHighlighter.propTypes = {
+  children: PropTypes.element.isRequired
+};
+
+TextHighlighter.contextType = HighlighterContext;
 
 export default TextHighlighter;

@@ -1,22 +1,40 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const ColorItemStyled = styled.div`
-    border: ${({isSelected}) => isSelected ? 2: 1}px black solid;
-    height:30px;
-    width: 50px;
     background-color: ${({color}) => color};
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    margin: 0 5px;
+    border: 1px #a97c7c solid;
+  
+    ${({ isSelected }) => isSelected && `
+      border: 1px black solid
+    `}
 
     :hover {
-        cursor: pointer:
+      cursor: pointer:
     }
 `;
 
-const ColorItem = ({color}) => {
+const ColorItem = ({color, isSelected, onClick}) => (
+  <ColorItemStyled
+    color={color}
+    isSelected={isSelected}
+    onClick={() => onClick(color)}
+  />
+)
 
-    return <ColorItemStyled 
-            color="red" 
-            isSelected={this.isSelected("red")}
-            onClick={this.getOnClick("red")}
-        />
+ColorItem.defaultProps = {
+  isSelected: false
 }
+
+ColorItem.propTypes = {
+  isSelected: PropTypes.bool,
+  color: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired
+};
+
+export default ColorItem;
