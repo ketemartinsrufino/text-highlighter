@@ -1,0 +1,4 @@
+- Create highlighter component
+- Create highlighter filter component
+- Uses contextApi or hooks
+- Configure lint/prettier
