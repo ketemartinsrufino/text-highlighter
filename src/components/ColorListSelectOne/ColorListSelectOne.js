@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ColorList from './ColorList';
+import ColorList from '../ColorList/ColorList';
 import PropTypes from 'prop-types';
 
 class ColorListSelectOne extends Component {

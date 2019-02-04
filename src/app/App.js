@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-// import './App.css';
-import TextHighlighter from './texthighlighter/TextHighlighter';
-import TextHighlighterFilter from './texthighlighter/TextHighlighterFilter';
-import { HighlighterProvider } from './context/HighlighterContext';
-
+import { HighlighterProvider } from '../context/HighlighterContext';
+import TextHighlighter from './TextHighlighter/TextHighlighter';
+import TextHighlighterFilter from './TextHighlighterFilter/TextHighlighterFilter';
 
 class App extends Component {
   constructor(props) {
@@ -15,7 +13,6 @@ class App extends Component {
 
   updateHighlightedTexts = (newText, color) => {
     const selectedByColor = [...this.state.highlightedTexts];
-    console.log("updateHighlightedTexts", {selectedByColor})
     selectedByColor.push({
       text: newText,
       color

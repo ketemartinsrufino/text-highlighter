@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ColorList from './ColorList';
+import ColorList from '../ColorList/ColorList';
 import PropTypes from 'prop-types';
 
 class ColorListSelectMany extends Component {
@@ -14,9 +14,6 @@ class ColorListSelectMany extends Component {
       this.setState((state) => {
         const selectedColors = [...state.selectedColors, color];
         this.props.setSelectedColors(selectedColors);
-        
-        console.log('selectColor', {selectedColors: selectedColors})
-
         return {
           selectedColors
         }
@@ -28,7 +25,6 @@ class ColorListSelectMany extends Component {
       const colors = [...state.selectedColors];
       colors.splice(index, 1);
       this.props.setSelectedColors(colors);
-
       return ({
         selectedColors: colors
       }
@@ -45,14 +41,14 @@ class ColorListSelectMany extends Component {
     }
   }
     
-    render(){        
-      return (
-        <ColorList
-          selectedColors={this.state.selectedColors}
-          onClick={this.onClick}
-        />
-      )
-    }
+  render(){        
+    return (
+      <ColorList
+        selectedColors={this.state.selectedColors}
+        onClick={this.onClick}
+      />
+    )
+  }
 }
 
 ColorListSelectMany.propTypes = {
