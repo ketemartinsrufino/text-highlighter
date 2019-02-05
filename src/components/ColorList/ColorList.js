@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ColorContainerStyled } from './styles';
 import ColorItem from '../ColorItem/ColorItem';
+import { COLORS } from '../ColorItem/Colors';
 
 const ColorList = ({ colors, selectedColors, onClick }) => (
   <ColorContainerStyled>
@@ -16,7 +17,7 @@ const ColorList = ({ colors, selectedColors, onClick }) => (
   </ColorContainerStyled>
 )
 ColorList.defaultProps = {
-  colors: ['#ef5350', '#ffeb3b', '#8eda8e'], 
+  colors: [COLORS.red, COLORS.yellow, COLORS.green], 
   selectedColors: []
 }
 

@@ -2,30 +2,24 @@ import React, { Component } from 'react';
 import ColorList from '../ColorList/ColorList';
 import PropTypes from 'prop-types';
 
-class ColorListSelectOne extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            selectedColor: '',
-        };
-    }
+const ColorListSelectOne = ({selectedColor}) => {
+  const selectColor = (color) => {
+      this.props.onColorSelect(color);
+  }
+  return (
+    <ColorList
+      selectedColors={[selectedColor]}
+      onClick={selectColor}
+    />
+  )
+}
 
-    selectColor = (color) => {
-        this.setState({selectedColor: color});
-        this.props.onColorSelect(color);
-    }
-    
-    render(){        
-      return (
-        <ColorList
-          selectedColors={[this.state.selectedColor]}
-          onClick={this.selectColor}
-        />
-      )
-    }
+ColorListSelectOne.defaults = {
+  selectedColor: ''
 }
 
 ColorListSelectOne.propTypes = {
+  selectedColor: PropTypes.string,
   onColorSelect: PropTypes.func.isRequired
 };
 
