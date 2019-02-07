@@ -24,6 +24,11 @@ exports[`ColorListSelectMany receive a list of "selectedColors" 1`] = `
     ]
   }
   onClick={[Function]}
-  selectedColors={Array []}
+  selectedColors={
+    Array [
+      "#ffeb3b",
+      "#ef5350",
+    ]
+  }
 />
 `;
