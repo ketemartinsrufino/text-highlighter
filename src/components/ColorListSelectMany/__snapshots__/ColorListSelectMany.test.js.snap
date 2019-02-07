@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ColorListSelectMany is defined with a default value 1`] = `
+<ColorList
+  colors={
+    Array [
+      "#ef5350",
+      "#ffeb3b",
+      "#8eda8e",
+    ]
+  }
+  onClick={[Function]}
+  selectedColors={Array []}
+/>
+`;
+
+exports[`ColorListSelectMany receive a list of "selectedColors" 1`] = `
+<ColorList
+  colors={
+    Array [
+      "#ef5350",
+      "#ffeb3b",
+      "#8eda8e",
+    ]
+  }
+  onClick={[Function]}
+  selectedColors={Array []}
+/>
+`;

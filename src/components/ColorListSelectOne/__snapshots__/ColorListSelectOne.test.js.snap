@@ -1,0 +1,364 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ColorListSelectOne is defined with a default value 1`] = `
+<ColorList
+  colors={
+    Array [
+      "#ef5350",
+      "#ffeb3b",
+      "#8eda8e",
+    ]
+  }
+  onClick={[MockFunction]}
+  selectedColors={
+    Array [
+      undefined,
+    ]
+  }
+/>
+`;
+
+exports[`ColorListSelectOne receive a "selectedColor" 1`] = `
+<ColorList
+  colors={
+    Array [
+      "#ef5350",
+      "#ffeb3b",
+      "#8eda8e",
+    ]
+  }
+  onClick={[MockFunction]}
+  selectedColors={
+    Array [
+      "#ffeb3b",
+    ]
+  }
+/>
+`;
+
+exports[`ColorListSelectOne receive a "selectedColor" and select another color 1`] = `
+<ColorListSelectOne
+  onColorSelect={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          "#ef5350",
+        ],
+      ],
+      "results": Array [
+        Object {
+          "isThrow": false,
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  selectedColor="#ffeb3b"
+>
+  <ColorList
+    colors={
+      Array [
+        "#ef5350",
+        "#ffeb3b",
+        "#8eda8e",
+      ]
+    }
+    onClick={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            "#ef5350",
+          ],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+        ],
+      }
+    }
+    selectedColors={
+      Array [
+        "#ffeb3b",
+      ]
+    }
+  >
+    <styled.div>
+      <StyledComponent
+        forwardedComponent={
+          Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": Array [],
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-bdVaJa",
+              "isStatic": true,
+              "lastClassName": "fGHxMu",
+              "rules": Array [
+                "
+  display: flex;
+  margin: 10px 0;
+",
+              ],
+            },
+            "displayName": "styled.div",
+            "foldedComponentIds": Array [],
+            "render": [Function],
+            "styledComponentId": "sc-bdVaJa",
+            "target": "div",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          }
+        }
+        forwardedRef={null}
+      >
+        <div
+          className="sc-bdVaJa fGHxMu"
+        >
+          <ColorItem
+            color="#ef5350"
+            isSelected={false}
+            key="color-#ef5350"
+            onClick={
+              [MockFunction] {
+                "calls": Array [
+                  Array [
+                    "#ef5350",
+                  ],
+                ],
+                "results": Array [
+                  Object {
+                    "isThrow": false,
+                    "value": undefined,
+                  },
+                ],
+              }
+            }
+          >
+            <styled.div
+              className="ColorItem"
+              color="#ef5350"
+              isSelected={false}
+              onClick={[Function]}
+            >
+              <StyledComponent
+                className="ColorItem"
+                color="#ef5350"
+                forwardedComponent={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "sc-bwzfXH",
+                      "isStatic": false,
+                      "lastClassName": "FVvLF",
+                      "rules": Array [
+                        "
+  background-color: ",
+                        [Function],
+                        ";
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  margin: 0 5px;
+  border: 1px #a97c7c solid;
+
+  ",
+                        [Function],
+                        "
+
+  :hover {
+    cursor: pointer;
+  }
+",
+                      ],
+                    },
+                    "displayName": "styled.div",
+                    "foldedComponentIds": Array [],
+                    "render": [Function],
+                    "styledComponentId": "sc-bwzfXH",
+                    "target": "div",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+                isSelected={false}
+                onClick={[Function]}
+              >
+                <div
+                  className="ColorItem sc-bwzfXH kStvIh"
+                  color="#ef5350"
+                  onClick={[Function]}
+                />
+              </StyledComponent>
+            </styled.div>
+          </ColorItem>
+          <ColorItem
+            color="#ffeb3b"
+            isSelected={true}
+            key="color-#ffeb3b"
+            onClick={
+              [MockFunction] {
+                "calls": Array [
+                  Array [
+                    "#ef5350",
+                  ],
+                ],
+                "results": Array [
+                  Object {
+                    "isThrow": false,
+                    "value": undefined,
+                  },
+                ],
+              }
+            }
+          >
+            <styled.div
+              className="ColorItem selected"
+              color="#ffeb3b"
+              isSelected={true}
+              onClick={[Function]}
+            >
+              <StyledComponent
+                className="ColorItem selected"
+                color="#ffeb3b"
+                forwardedComponent={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "sc-bwzfXH",
+                      "isStatic": false,
+                      "lastClassName": "FVvLF",
+                      "rules": Array [
+                        "
+  background-color: ",
+                        [Function],
+                        ";
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  margin: 0 5px;
+  border: 1px #a97c7c solid;
+
+  ",
+                        [Function],
+                        "
+
+  :hover {
+    cursor: pointer;
+  }
+",
+                      ],
+                    },
+                    "displayName": "styled.div",
+                    "foldedComponentIds": Array [],
+                    "render": [Function],
+                    "styledComponentId": "sc-bwzfXH",
+                    "target": "div",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+                isSelected={true}
+                onClick={[Function]}
+              >
+                <div
+                  className="ColorItem selected sc-bwzfXH FeDsH"
+                  color="#ffeb3b"
+                  onClick={[Function]}
+                />
+              </StyledComponent>
+            </styled.div>
+          </ColorItem>
+          <ColorItem
+            color="#8eda8e"
+            isSelected={false}
+            key="color-#8eda8e"
+            onClick={
+              [MockFunction] {
+                "calls": Array [
+                  Array [
+                    "#ef5350",
+                  ],
+                ],
+                "results": Array [
+                  Object {
+                    "isThrow": false,
+                    "value": undefined,
+                  },
+                ],
+              }
+            }
+          >
+            <styled.div
+              className="ColorItem"
+              color="#8eda8e"
+              isSelected={false}
+              onClick={[Function]}
+            >
+              <StyledComponent
+                className="ColorItem"
+                color="#8eda8e"
+                forwardedComponent={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "sc-bwzfXH",
+                      "isStatic": false,
+                      "lastClassName": "FVvLF",
+                      "rules": Array [
+                        "
+  background-color: ",
+                        [Function],
+                        ";
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  margin: 0 5px;
+  border: 1px #a97c7c solid;
+
+  ",
+                        [Function],
+                        "
+
+  :hover {
+    cursor: pointer;
+  }
+",
+                      ],
+                    },
+                    "displayName": "styled.div",
+                    "foldedComponentIds": Array [],
+                    "render": [Function],
+                    "styledComponentId": "sc-bwzfXH",
+                    "target": "div",
+                    "toString": [Function],
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+                isSelected={false}
+                onClick={[Function]}
+              >
+                <div
+                  className="ColorItem sc-bwzfXH FVvLF"
+                  color="#8eda8e"
+                  onClick={[Function]}
+                />
+              </StyledComponent>
+            </styled.div>
+          </ColorItem>
+        </div>
+      </StyledComponent>
+    </styled.div>
+  </ColorList>
+</ColorListSelectOne>
+`;

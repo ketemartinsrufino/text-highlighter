@@ -2,17 +2,12 @@ import React from 'react';
 import ColorList from '../ColorList/ColorList';
 import PropTypes from 'prop-types';
 
-const ColorListSelectOne = ({selectedColor}) => {
-  const selectColor = (color) => {
-      this.props.onColorSelect(color);
-  }
-  return (
-    <ColorList
-      selectedColors={[selectedColor]}
-      onClick={selectColor}
-    />
-  )
-}
+const ColorListSelectOne = ({selectedColor, onColorSelect}) => (
+  <ColorList
+    selectedColors={[selectedColor]}
+    onClick={onColorSelect}
+  />
+);
 
 ColorListSelectOne.defaults = {
   selectedColor: ''

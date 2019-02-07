@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ColorItem if receive "isSelected" prop, will render a bigger border 1`] = `
+<styled.div
+  className="ColorItem selected"
+  color="red"
+  isSelected={true}
+  onClick={[Function]}
+/>
+`;
+
+exports[`ColorItem if receive "red" color, will render a "red" component 1`] = `
+<styled.div
+  className="ColorItem"
+  color="red"
+  isSelected={false}
+  onClick={[Function]}
+/>
+`;

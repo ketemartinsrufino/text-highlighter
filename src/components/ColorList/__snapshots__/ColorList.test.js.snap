@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ColorList custom colors 1`] = `
+<styled.div>
+  <ColorItem
+    color="purple"
+    isSelected={false}
+    key="color-purple"
+    onClick={[MockFunction]}
+  />
+  <ColorItem
+    color="blue"
+    isSelected={false}
+    key="color-blue"
+    onClick={[MockFunction]}
+  />
+</styled.div>
+`;
+
+exports[`ColorList is defined with a default value 1`] = `
+<styled.div>
+  <ColorItem
+    color="#ef5350"
+    isSelected={false}
+    key="color-#ef5350"
+    onClick={[MockFunction]}
+  />
+  <ColorItem
+    color="#ffeb3b"
+    isSelected={false}
+    key="color-#ffeb3b"
+    onClick={[MockFunction]}
+  />
+  <ColorItem
+    color="#8eda8e"
+    isSelected={false}
+    key="color-#8eda8e"
+    onClick={[MockFunction]}
+  />
+</styled.div>
+`;
+
+exports[`ColorList receive a list of "selectedColors" 1`] = `
+<styled.div>
+  <ColorItem
+    color="#ef5350"
+    isSelected={false}
+    key="color-#ef5350"
+    onClick={[MockFunction]}
+  />
+  <ColorItem
+    color="#ffeb3b"
+    isSelected={true}
+    key="color-#ffeb3b"
+    onClick={[MockFunction]}
+  />
+  <ColorItem
+    color="#8eda8e"
+    isSelected={true}
+    key="color-#8eda8e"
+    onClick={[MockFunction]}
+  />
+</styled.div>
+`;

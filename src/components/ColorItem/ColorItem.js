@@ -7,6 +7,7 @@ const ColorItem = ({ color, isSelected, onClick }) => (
     color={color}
     isSelected={isSelected}
     onClick={() => onClick(color)}
+    className={`ColorItem${isSelected ? ' selected' : ''}`}
   />
 )
 

@@ -9,10 +9,10 @@ export const ColorItemStyled = styled.div`
   border: 1px #a97c7c solid;
 
   ${({ isSelected }) => isSelected && `
-    border: 2px black solid
+    border: 2px black solid;
   `}
 
   :hover {
-    cursor: pointer:
+    cursor: pointer;
   }
 `;
