@@ -3,29 +3,20 @@ import { HighlighterContext } from '../../context/HighlighterContext';
 import ColorListSelectMany from '../../components/ColorListSelectMany/ColorListSelectMany';
 import { ContainerStyled } from '../styles';
 import { TextListStyled, StyledSpan } from './styles';
+import { getTextsByColors } from './FilterUtils';
 
 class TextHighlighterFilter extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      selectedColors: [],
-      selectedTexts: {}
-    };
-  }
+  getDataSource = () => this.context;
 
-  setSelectedColors = (colors) => {
-    this.setState({selectedColors: colors})
-  }
+  setSelectedColors = (colors) => (
+    this.getDataSource().updateContext('filterColors', colors)
+  )
 
-  getFilteredTexts = () => {
-    const texts = this.context.highlightedTexts;
-    const filteresTexts = texts.filter(({color}) => {
-      return this.state.selectedColors.includes(color);
-    });
+  getSelectedColors = () => this.getDataSource().filterColors
 
-    return filteresTexts.map(({color, text}) => {
-      return <StyledSpan color={color}>{text}</StyledSpan>
-    })
+  getTexts = () => {
+    const texts = this.getDataSource().highlightedTexts;
+    return getTextsByColors(texts, this.getSelectedColors());
   }
 
   render(){
@@ -35,7 +26,7 @@ class TextHighlighterFilter extends Component {
           setSelectedColors={this.setSelectedColors}
         />
         <TextListStyled>
-          {this.getFilteredTexts()}
+          {this.getTexts()}
         </TextListStyled>
       </ContainerStyled>
     )

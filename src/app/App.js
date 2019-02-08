@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import HighlighterProvider from '../context/HighlighterProvider';
 import TextHighlighter from './TextHighlighter/TextHighlighter';
 import TextHighlighterFilter from './TextHighlighterFilter/TextHighlighterFilter';
-import { HighlighterConsumer } from '../context/HighlighterContext';
 
 class App extends Component {
   render() {

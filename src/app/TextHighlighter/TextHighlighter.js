@@ -8,38 +8,38 @@ import EditButton from './components/EditButton';
 import { handleMouseUp } from './HighlighterUtils';
 
 class TextHighlighter extends Component {
-  constructor(props) {
-    super(props);
-  }
 
-  onColorSelect = (color) => {
-    this.context.updateContext('colorToHighlight', color);
-  }
+  getDataSource = () => this.context;
+
+  onColorSelect = color => (
+    this.getDataSource().updateContext('colorToHighlight', color)
+  )
 
   onSelectText = () => {
-    const color = this.context.colorToHighlight;
+    const color = this.getDataSource().colorToHighlight;
     if( !color ) {
       alert("Select a color, please");
       return;
     }
-    this.context.addHighlightedText(handleMouseUp(color));
+    this.getDataSource().addHighlightedText(handleMouseUp(color));
   }
 
-  updateText = (event) => {
-    this.context.updateContext('originalText', event.target.value);
-  }
+  updateText = event => (
+    this.getDataSource().updateContext('originalText', event.target.value)
+  )
 
   enableEditionMode = () => {
-    this.context.toogleEditionMode(true);
-    this.context.clearHighlightedTexts();
-  }
-  onBlur = () => {
-    this.context.toogleEditionMode(false);
+    this.getDataSource().toogleEditionMode(true);
+    this.getDataSource().clearHighlightedTexts();
   }
 
+  onBlur = () => (
+    this.getDataSource().toogleEditionMode(false)
+  )
+    
   getContent = () => {
-    const text = this.context.originalText;
-    const isEditionMode = this.context.isEditionMode
+    const text = this.getDataSource().originalText;
+    const isEditionMode = this.getDataSource().isEditionMode
     if( isEditionMode ) {
       return (
         <TextArea  
@@ -61,13 +61,13 @@ class TextHighlighter extends Component {
     return (
       <ContainerStyled>
         <ColorListSelectOne 
-          selectedColor={this.context.colorToHighlight}
+          selectedColor={this.getDataSource().colorToHighlight}
           onColorSelect={this.onColorSelect}/>
         
         {this.getContent()}
         
         <EditButton 
-          isEnabled={!this.context.isEditionMode}
+          isEnabled={!this.getDataSource().isEditionMode}
           onClick={this.enableEditionMode}
         />
       </ContainerStyled>
