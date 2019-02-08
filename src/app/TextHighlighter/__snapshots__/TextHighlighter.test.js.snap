@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextHighlighter rendering with default values 1`] = `
+<styled.div>
+  <ColorListSelectOne
+    onColorSelect={[Function]}
+  />
+  <styled.div
+    onMouseUp={[Function]}
+  />
+  <EditButton
+    isEnabled={true}
+    onClick={[Function]}
+  />
+</styled.div>
+`;
+
+exports[`TextHighlighter rendering with textValue values 1`] = `
+<styled.div>
+  <ColorListSelectOne
+    onColorSelect={[Function]}
+  />
+  <styled.div
+    onMouseUp={[Function]}
+  />
+  <EditButton
+    isEnabled={true}
+    onClick={[Function]}
+  />
+</styled.div>
+`;

@@ -14,7 +14,6 @@ class TextHighlighterFilter extends Component {
   }
 
   setSelectedColors = (colors) => {
-    console.log("TextHighlighterFilter.setSelectedColors", colors);
     this.setState({selectedColors: colors})
   }
 
